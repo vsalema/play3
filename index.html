@@ -166,9 +166,33 @@ body[data-av="audio"] #video1 {padding-top:25%;}
 
 <script>
 
-	function showCCform()
+	var vvplay,vvad;
+var prevt=0, tott=0, v2done=0, lastt=0;;
+$.ajaxSetup({ headers: { 'Content-Cache': 'no-cache' } });
+
+player.on('play', function(){ doPlay(); });
+player.on('ended', function(){ $('div.video_ad').show(); $('#play_limit_box').show();ls.remove('ttfugvgyqu3lbn'); });
+player.on('timeupdate',function() {
+    if(5>0 && player.currentTime()>=5 && vvad!=1){vvad=1;$('div.video_ad_fadein').fadeIn('slow');}
+    
+    if(player.currentTime()>=lastt+5 || player.currentTime()<lastt){ lastt=player.currentTime(); ls.set('ttfugvgyqu3lbn', Math.round(lastt), { ttl: 60*60*24*7 }); }
+});
+function doPlay()
 {
-videojs('video1').pause();
+  $('div.video_ad').hide();
+  $('#over_player_msg').hide();
+  if(vvplay)return;
+  vvplay=1;
+  adb=0;
+  if( window.cRAds === undefined ){ adb=1; }
+  $.get('https://darkibox.com/dl?op=view&file_code=fugvgyqu3lbn&hash=4552679-10-78-1749053615-05e0d57ddbba93df439bd57ab33ee6b1&embed=1&adb='+adb, function(data) {$('#fviews').html(data);} );
+
+  $('.vjs-captions-menu-item:last').click(function() { showCCform(); });window.setTimeout( function (){ player.hasStarted(false); player.currentTime(0); player.dispose(); $('#vplayer').append('<img  src="https://dl34.darkibox.com/i/48/00910/fugvgyqu3lbn.jpg" style="width:100%;height:100%;">'); $('#play_limit_box').show(); }, 1800*1000 );var lastt = ls.get('ttfugvgyqu3lbn'); if(lastt>0){ player.currentTime(lastt); }
+}
+
+function showCCform()
+{
+videojs('vjsplayer').pause();
 
 var $dd=	$("<div />").css({
    position: "absolute",
@@ -185,7 +209,7 @@ $("<iframe />").css({
     height: "60%",
     zIndex: 1000001,
     "margin-top": "50px"
-}).prop({'src':'https://darkibox.com/?op=upload_srt&file_code=xgwppc9yunyz', 'frameborder':'0', 'scrolling':'no'}).appendTo($dd);
+}).prop({'src':'https://darkibox.com/?op=upload_srt&file_code=fugvgyqu3lbn', 'frameborder':'0', 'scrolling':'no'}).appendTo($dd);
 
  $dd.click(function (){ $(this).remove(); player.play(); });
  $dd.appendTo( $('#vplayer') );
@@ -194,6 +218,8 @@ $("<iframe />").css({
 
 
 player.qualityMenu({resolutionLabelBitrates: false, labels:{'800':'UHD'}, });
+
+</script>
 
 </script>
 	
