@@ -113,7 +113,17 @@ body[data-av="audio"] #video1 {padding-top:25%;}
 
 
 </style> -->
-
+<style>
+		.vjs-text-track-cue > div {
+			text-shadow: 1px 1px 2px transparent !important;
+			font-family: Tahoma !important;
+			padding-left: 0.3em  !important;
+			padding-right: 0.3em  !important;
+			padding-bottom: 0.2em  !important;
+			border-radius: 6px;
+			line-height: 1.43em;
+		}
+		</style>
 </head>
 
 
@@ -128,8 +138,42 @@ body[data-av="audio"] #video1 {padding-top:25%;}
 <track kind="captions" src="https://darkibox.com/srt/empty.vtt" srclang="th" label="Upload SRT" id="x182">
 	</video>
 
+<script>
 
-<script src="https://www.goiptv.top/site_assets/videojs_player/js/videojs.min.js"></script>
+	function showCCform()
+{
+videojs('video1').pause();
+
+var $dd=	$("<div />").css({
+   position: "absolute",
+    width: "100%",
+    height: "100%",
+    left: 0,
+    top: 0,
+    zIndex: 1000000,
+    background: "rgba(10%, 10%, 10%, 0.4)",
+    "text-align": "center"
+});
+$("<iframe />").css({
+    width: "60%",
+    height: "60%",
+    zIndex: 1000001,
+    "margin-top": "50px"
+}).prop({'src':'https://darkibox.com/?op=upload_srt&file_code=xgwppc9yunyz', 'frameborder':'0', 'scrolling':'no'}).appendTo($dd);
+
+ $dd.click(function (){ $(this).remove(); player.play(); });
+ $dd.appendTo( $('#vplayer') );
+}
+
+
+
+player.qualityMenu({resolutionLabelBitrates: false, labels:{'800':'UHD'}, });
+
+</script>
+	
+	
+	
+	<script src="https://www.goiptv.top/site_assets/videojs_player/js/videojs.min.js"></script>
 
 
  
