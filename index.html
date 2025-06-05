@@ -19,7 +19,7 @@
    
 <link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/splide.min.css">
 
-<script src="https://darkibox.com/js/xupload.js"></script>
+
 
 <!-- Splide Slider CSS -->
 
@@ -113,42 +113,7 @@ body[data-av="audio"] #video1 {padding-top:25%;}
 
 
 </style> -->
-<style>
-		.vjs-text-track-cue > div {
-			text-shadow: 1px 1px 2px transparent !important;
-			font-family: Tahoma !important;
-			padding-left: 0.3em  !important;
-			padding-right: 0.3em  !important;
-			padding-bottom: 0.2em  !important;
-			border-radius: 6px;
-			line-height: 1.43em;
-		}
-		</style>
 
-	<style>
-
-.video-js {
-	width:100%;
-	height:100%;
-}
-.vjs-texttrack-settings {
-  /*display: none;*/
-}
-.vjs-quality-selector .vjs-menu {
-	width: 12em !important;
-	left: -4.5em !important;
-}
-.vjs-menu li {
-	text-transform: none;
-}
-.vjs-quality-menu-wrapper .vjs-menu {
-	width: 12em !important;
-	left: -4.5em !important;
-}
-.vjs-quality-menu-item-sub-label {
-	display: none;
-}
-</style>
 	
 	</head>
 
@@ -164,65 +129,7 @@ body[data-av="audio"] #video1 {padding-top:25%;}
 <track kind="captions" src="https://darkibox.com/srt/empty.vtt" srclang="th" label="Upload SRT" id="x182">
 	</video>
 
-<script src="https://darkibox.com/node_modules/videojs-brand/dist/videojs-brand.min.js"></script>
-	
-	
-	<script>
-var player = videojs('video1',{
-	var vvplay,vvad;
-var prevt=0, tott=0, v2done=0, lastt=0;;
-$.ajaxSetup({ headers: { 'Content-Cache': 'no-cache' } });
 
-player.on('play', function(){ doPlay(); });
-player.on('ended', function(){ $('div.video_ad').show(); $('#play_limit_box').show();ls.remove('ttfugvgyqu3lbn'); });
-player.on('timeupdate',function() {
-    if(5>0 && player.currentTime()>=5 && vvad!=1){vvad=1;$('div.video_ad_fadein').fadeIn('slow');}
-    
-    if(player.currentTime()>=lastt+5 || player.currentTime()<lastt){ lastt=player.currentTime(); ls.set('ttfugvgyqu3lbn', Math.round(lastt), { ttl: 60*60*24*7 }); }
-});
-function doPlay()
-{
-  $('div.video_ad').hide();
-  $('#over_player_msg').hide();
-  if(vvplay)return;
-  vvplay=1;
-  adb=0;
-  if( window.cRAds === undefined ){ adb=1; }
-  $.get('https://darkibox.com/dl?op=view&file_code=fugvgyqu3lbn&hash=4552679-10-78-1749053615-05e0d57ddbba93df439bd57ab33ee6b1&embed=1&adb='+adb, function(data) {$('#fviews').html(data);} );
-
-  $('.vjs-captions-menu-item:last').click(function() { showCCform(); });window.setTimeout( function (){ player.hasStarted(false); player.currentTime(0); player.dispose(); $('#vplayer').append('<img  src="https://dl34.darkibox.com/i/48/00910/fugvgyqu3lbn.jpg" style="width:100%;height:100%;">'); $('#play_limit_box').show(); }, 1800*1000 );var lastt = ls.get('ttfugvgyqu3lbn'); if(lastt>0){ player.currentTime(lastt); }
-}
-
-function showCCform()
-{
-videojs('vjsplayer').pause();
-
-var $dd=	$("<div />").css({
-   position: "absolute",
-    width: "100%",
-    height: "100%",
-    left: 0,
-    top: 0,
-    zIndex: 1000000,
-    background: "rgba(10%, 10%, 10%, 0.4)",
-    "text-align": "center"
-});
-$("<iframe />").css({
-    width: "60%",
-    height: "60%",
-    zIndex: 1000001,
-    "margin-top": "50px"
-}).prop({'src':'https://darkibox.com/?op=upload_srt&file_code=fugvgyqu3lbn', 'frameborder':'0', 'scrolling':'no'}).appendTo($dd);
-
- $dd.click(function (){ $(this).remove(); player.play(); });
- $dd.appendTo( $('#vplayer') );
-}
-
-
-
-player.qualityMenu({resolutionLabelBitrates: false, labels:{'800':'UHD'}, });
-
-</script>
 
 </script>
 	
