@@ -8,6 +8,17 @@
 <meta name="robots" content="nofollow">
 <meta name="googlebot" content="noindex">
 	<head>
+<style>
+.container{
+  max-width: 1000px;
+  width: 100%;
+  height: 450px;
+  margin: 10px auto;
+  border-radius: 5px;
+  overflow: hidden
+}
+</style>
+		
 <script src="https://vsalema.github.io/play3/js/open52.js"></script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css">
@@ -173,7 +184,8 @@ function play() {
 }
 
 </script>
-<video id="video1" class="video-js vjs-default-skin vjs-responsive  vjs-big-play-centered vjs-16-9" poster="" autoplay controls preload="auto">
+<div class="container">
+	<video id="video1" class="video-js vjs-default-skin vjs-responsive  vjs-big-play-centered vjs-16-9" poster="" autoplay controls preload="auto">
 <!--	<source src="https://tvradiozap.eu/index.php/640" type="application/x-mpegURL">
 		<source src="https://icecast.radiofrance.fr/franceculture-hifi.aac">
 		<source src="https://artesimulcast.akamaized.net/hls/live/2031003-b/artelive_fr/master_v720.m3u8" type="application/x-mpegURL">
@@ -181,7 +193,7 @@ function play() {
 	 
 	</video>
 
-
+</div>
 
 </script>
 	
