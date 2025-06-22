@@ -9,12 +9,23 @@
 <meta name="googlebot" content="noindex">
 	<head>
 
+<script src="https://vsalema.github.io/play3/js/open52.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.cs">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/css/nice-select.css">
+
+<link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/font-awesome.min.css">
+
+   
+<link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/splide.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap" rel="stylesheet">
+
+ 
+ <link href="https://www.goiptv.top/site_assets/videojs_player/css/videojs_style1.min.css" rel="stylesheet" type="text/css" />
+<script src="https://unpkg.com/video.js/dist/video.min.jsxx"></script>
 <style>
-.body {
-  background-color: black;
-}
-		</style>
-		<style>
 .container {
   max-width: 1000px;
   width: 60%;
@@ -27,281 +38,395 @@
 }
 {	
 </style>
-	<style>
-		/* From Uiverse.io by mRcOol7 */ 
-.search-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: linear-gradient(to right, #5c5c5c, #f5f5f5);
-  padding: 30px;
-  border-radius: 15px;
-  transition: background 0.3s ease;
-  perspective: 1000px;
-}
-
-
-
-.search-input {
-  position: relative;
-  width: 96%;
-  height: 40px;
-  padding: 12px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  background: linear-gradient(to right, #d9d9d9, #f8f8f8);
-  font-size: 16px;
-  color: #555;
-  outline: none;
-  transition: box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease, transform 0.3s ease;
-  transform-style: preserve-3d;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.2) inset; /* Improved box-shadow for a realistic feel */
-  margin-left: 32px;
-}
-
-.search-input:focus,
-.search-input:not(:placeholder-shown) {
-  border-color: #4caf50;
-  background: linear-gradient(to right, #c2f0c2, #f0f0f0);
-  transform: rotateX(20deg);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2) inset; /* Improved box-shadow on focus */
-}
-
-.search-input:focus + .label,
-.search-input:not(:placeholder-shown) + .label {
-  transform: translateY(-120%) scale(0.8);
-  font-size: 12px;
-  color: #4caf50;
-  text-shadow: 0 0 5px rgba(76, 175, 80, 0.6);
-}
-
-.search-input:hover {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2) inset; /* Improved box-shadow on hover */
-  background: linear-gradient(to right, #e6e6e6, #f9f9f9);
-  border-color: #999;
-}
-
-.clear-button {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  color: #999;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
-}
-
-.clear-button:hover {
-  color: #4caf50;
-  transform: scale(1.1);
-}
-
-.search-input:not(:focus):not(:placeholder-shown) + .clear-button {
-  opacity: 1;
-}
-
-.shine {
-  position: absolute;
-  top: 0;
-  left: 0;
+<style>
+ .galaxy {
+  height: 800px;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom right,
-    rgba(255, 255, 255, 0.6),
-    transparent
-  );
-  border-radius: 8px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.search-input:focus + .shine {
-  opacity: 1;
-}
-
-.search-icon {
+  background-image: radial-gradient(#ffffff 1px, transparent 1px),
+    radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position:
+    0 0,
+    25px 25px;
   position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  color: #999;
-  cursor: pointer;
-  transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease;
-  border-radius: 50%;
+  z-index: -1;
+  animation: twinkle 5s infinite;
 }
 
-.search-input:focus + .search-icon {
-  color: #4caf50;
-  transform: translateY(-50%) scale(1.1);
-  filter: drop-shadow(0 0 5px rgba(76, 175, 80, 0.6));
- 
-}
-
-@keyframes inputPulse {
+@keyframes twinkle {
   0%,
   100% {
-    transform: scale(1);
+    opacity: 0.5;
   }
   50% {
-    transform: scale(1.05);
+    opacity: 1;
   }
 }
 
-.search-input:focus {
-  animation: inputPulse 0.5s ease;
+.stardust,
+.cosmic-ring,
+.starfield,
+.nebula {
+  max-height: 70px;
+  max-width: 314px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  border-radius: 12px;
+  filter: blur(3px);
 }
 
-	</style>	
-		
-	
-
-		
-<script src="https://vsalema.github.io/play3/js/open52.js"></script>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.cs">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/css/nice-select.css">
-
-<link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/font-awesome.min.css">
-
-   
-<link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/splide.min.css">
-
-
-
-<!-- Splide Slider CSS -->
-
-
-
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap" rel="stylesheet">
-
- 
- <link href="https://www.goiptv.top/site_assets/videojs_player/css/videojs_style1.min.css" rel="stylesheet" type="text/css" />
-<script src="https://unpkg.com/video.js/dist/video.min.jsxx"></script>
-
-
-
-
-<!-- <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
-<script src="https://unpkg.com/video.js/dist/video.js"></script>-->
-
-
-<!-- Nécessaires pour affichage des temps, ainsi qu'options player 'currentTimeDisplay', 'timeDivider', 'durationDisplay' à mettre à true
-.vjs-current-time {
-  display: inline-block !important;
+.input {
+  background-color: #05071b;
+  border: none;
+  width: 980px;
+  height: 56px;
+  border-radius: 10px;
+  color: #a9c7ff;
+  padding-inline: 59px;
+  font-size: 18px;
 }
-.vjs-time-divider {
-  display: inline-block !important;
-}
-.vjs-duration {
-  display: inline-block !important;
-}
--->
-<!-- <style type="text/css">
-html {overflow: hidden;}
-body {background:black;padding:0;margin:0;}
 
-#tvrzInfos {font-size:1.7em;padding-bottom:2px;}	/*bouton d'ouverture de l'info tech */
-#tvrzInfos > * {z-index:999999;font-size:smaller;display:none; position:absolute; margin-top:-12em;margin-left:-20em; right:10px;
-				text-align:left; padding:10px;color:black; background:lightgrey;	border-radius: 10px; outline:1px solid black;}
-#tvrzInfos:hover > * {
-	display:block;
-    animation: 1s menuOn;
-	opacity:0;
-	animation-fill-mode: forwards;
-	visibility: visible;
+#search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input::placeholder {
+  color: #6e8cff;
+}
+
+.input:focus {
+  outline: none;
+}
+
+#main:focus-within > #input-mask {
+  display: none;
+}
+
+#input-mask {
+  pointer-events: none;
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  background: linear-gradient(90deg, transparent, #05071b);
+  top: 18px;
+  left: 70px;
+}
+
+#cosmic-glow {
+  pointer-events: none;
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  background: #4d6dff;
+  top: 10px;
+  left: 5px;
+  filter: blur(20px);
+  opacity: 0.8;
+  transition: all 2s;
+}
+
+#main:hover > #cosmic-glow {
+  opacity: 0;
+}
+
+.stardust {
+  max-height: 63px;
+  max-width: 307px;
+  border-radius: 10px;
+  filter: blur(2px);
+}
+
+.stardust::before {
+  content: "";
+  z-index: -2;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(83deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  filter: brightness(1.4);
+  background-image: conic-gradient(
+    rgba(0, 0, 0, 0) 0%,
+    #4d6dff,
+    rgba(0, 0, 0, 0) 8%,
+    rgba(0, 0, 0, 0) 50%,
+    #6e8cff,
+    rgba(0, 0, 0, 0) 58%
+  );
+  transition: all 2s;
+}
+
+.cosmic-ring {
+  max-height: 59px;
+  max-width: 303px;
+  border-radius: 11px;
+  filter: blur(0.5px);
+}
+
+.cosmic-ring::before {
+  content: "";
+  z-index: -2;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(70deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  filter: brightness(1.3);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: conic-gradient(
+    #05071b,
+    #4d6dff 5%,
+    #05071b 14%,
+    #05071b 50%,
+    #6e8cff 60%,
+    #05071b 64%
+  );
+  transition: all 2s;
+}
+
+.starfield {
+  max-height: 65px;
+  max-width: 312px;
+}
+
+.starfield::before {
+  content: "";
+  z-index: -2;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(82deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: conic-gradient(
+    rgba(0, 0, 0, 0),
+    #1c2452,
+    rgba(0, 0, 0, 0) 10%,
+    rgba(0, 0, 0, 0) 50%,
+    #2a3875,
+    rgba(0, 0, 0, 0) 60%
+  );
+  transition: all 2s;
+}
+
+#search-container:hover > .starfield::before {
+  transform: translate(-50%, -50%) rotate(-98deg);
+}
+
+#search-container:hover > .nebula::before {
+  transform: translate(-50%, -50%) rotate(-120deg);
+}
+
+#search-container:hover > .stardust::before {
+  transform: translate(-50%, -50%) rotate(-97deg);
+}
+
+#search-container:hover > .cosmic-ring::before {
+  transform: translate(-50%, -50%) rotate(-110deg);
+}
+
+#search-container:focus-within > .starfield::before {
+  transform: translate(-50%, -50%) rotate(442deg);
+  transition: all 4s;
+}
+
+#search-container:focus-within > .nebula::before {
+  transform: translate(-50%, -50%) rotate(420deg);
+  transition: all 4s;
+}
+
+#search-container:focus-within > .stardust::before {
+  transform: translate(-50%, -50%) rotate(443deg);
+  transition: all 4s;
+}
+
+#search-container:focus-within > .cosmic-ring::before {
+  transform: translate(-50%, -50%) rotate(430deg);
+  transition: all 4s;
+}
+
+.nebula {
+  overflow: hidden;
+  filter: blur(30px);
+  opacity: 0.4;
+  max-height: 130px;
+  max-width: 354px;
+}
+
+.nebula:before {
+  content: "";
+  z-index: -2;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(60deg);
+  position: absolute;
+  width: 999px;
+  height: 999px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: conic-gradient(
+    #000,
+    #4d6dff 5%,
+    #000 38%,
+    #000 50%,
+    #6e8cff 60%,
+    #000 87%
+  );
+  transition: all 2s;
+}
+
+#wormhole-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  max-height: 40px;
+  max-width: 38px;
+  height: 100%;
+  width: 100%;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #1c2452, #05071b, #2a3875);
+  border: 1px solid transparent;
+}
+
+.wormhole-border {
+  height: 42px;
+  width: 40px;
+  position: absolute;
+  overflow: hidden;
+  top: 7px;
+  right: 7px;
+  border-radius: 10px;
+}
+
+.wormhole-border::before {
+  content: "";
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  filter: brightness(1.35);
+  background-image: conic-gradient(
+    rgba(0, 0, 0, 0),
+    #4d6dff,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0) 50%,
+    #6e8cff,
+    rgba(0, 0, 0, 0) 100%
+  );
+  animation: rotate 4s linear infinite;
+}
+
+#main {
+  position: relative;
+}
+
+#search-icon {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+
+@keyframes rotate {
+  100% {
+    transform: translate(-50%, -50%) rotate(450deg);
   }
-@keyframes menuOn{	
-	0% {visibility: hidden}
-	80% {opacity:0;}
-	100% {opacity:0.75;}  
 }
-
-
-
-.vjs-control-bar {font-size: calc(4px + 2vw); /*on augmente épaisseurs contrôles, taille semi-proportionnelle à écran*/
-}
-	
-.video-js .vjs-progress-control {
-    position:absolute;
-    width: calc(100% - 25px);
-    top:0;
-	left:0;
-    height:3px;
-    /* deal with resulting gap between progress control and control bar that
-       is the result of the attempt to keep things "clickable" on the controls */
-    background-color: #2B333F;
-    background-color: rgba(43, 51, 63, 0.7);
-}
-
-.video-js .vjs-progress-holder {
-    position:absolute;
-    margin:0px;
-    top:0%;
-    width:100%;
-}
-
-/*
-.video-js .vjs-volume-panel.vjs-volume-panel-horizontal.vjs-hover, .video-js .vjs-volume-panel.vjs-volume-panel-horizontal:active, .video-js .vjs-volume-panel.vjs-volume-panel-horizontal.vjs-slider-active {
-  width: 50em !important;
-  transition: width 0.1s;
-}*/
-.video-js .vjs-volume-panel.vjs-volume-panel-horizontal.vjs-mute-toggle-only {
-  width: 50em !important;
-}
-.vjs-volume-bar.vjs-slider-horizontal {
-  width: 50em !important;
-}
-
-/* aspect-ratio 4-1 en audio. videojs met padding-top:56.25% pour du 16/9 par la class : .video2-dimensions.vjs-fluid:not(.vjs-audio-only-mode)*/
-body[data-av="audio"] #video1 {padding-top:25%;} 	
-
-
-
-</style> -->
-<link rel="stylesheet" type="text/css" href="https://tvradiozap.eu/css/tvrz52.css" />	
-	
-	
-	</head>
-
-
+</style> 
+  </head>
 <body style="background-color:black;">
-	
-	<div style="margin-top: 0px;">
-  
-  <div style="display:inline-block;"><a href="/"><img src="https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_3757108f3f3cd29b.png" alt="logo, page d'accueil" style="max-width: 150px; max-height: 150px;margin-top: 0px;"></a></div><div style="display:inline-block;font-weight:bold;width:60%;"><span style="display:inline-block;font-size:larger;transform:translateY(-45px);">Tools</span>
-	</div>
+<div class="galaxy"></div>
+<div id="search-container">
+  <div class="nebula"></div>
+  <div class="starfield"></div>
+  <div class="cosmic-dust"></div>
+  <div class="cosmic-dust"></div>
+  <div class="cosmic-dust"></div>
 
-	
-	<img style="white-space:nowrap;" src="https://tvradiozap.eu/tools/im/flag-uk.gif"/> Watch full screen live TV, videos, or play any radio, audio.
-	<img src="https://tvradiozap.eu/tools/im/flag-fr.gif"/><span style="white-space:nowrap;" lang="fr"> Regardez les TV et vidéos plein écran ou écouter radios et audio.</span>
+   <div class="stardust"></div>
 
+  <div class="cosmic-ring"></div>
 
-	 Play Hls m3u8, Dash mpd, Dailymotion, Youtube, Vimeo, Twitch, mp4, mp3, flac, aac, ogg...
-
-
-	Entrez simplement le lien audio/vidéo ci-dessous et appuyez sur la touche <span class="boutonlike" style="white-space:nowrap;"> Enter ⏎ </span>  ou cliquez sur <span class="bouton" style="white-space:nowrap;color:white;" onclick="play()">Play</span>.
-	
-		<!-- From Uiverse.io by mRcOol7 --> 
-<input  minlength="5" maxlength="2000" type="text" autofocus required class="search-input" placeholder="Examples https://streamtv.cdn.dvmr.fr/TVR/ngrp:tvr.stream_all/master.m3u8 or https://vimeo.com/284319264" value="" />
-
-		
-		
-		
-		
-		
-
-	<span style="color:red"><?php echo $_GET['err'] ?></span>
-	</div>
-</body>
-
+  <div id="main">
+    <input
+      required class="input"
+      name="text"
+      minlength="5" 
+      maxlength="2000"
+      type="text"
+      autofocus
+      placeholder="Examples https://streamtv.cdn.dvmr.fr/TVR/ngrp:tvr.stream_all/master.m3u8 or https://vimeo.com/284319264"
+     value=""/>
+    <div id="input-mask"></div>
+    <div id="cosmic-glow"></div>
+    <div class="wormhole-border"></div>
+    <div id="wormhole-icon">
+      <svg
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        stroke-width="2"
+        stroke="#a9c7ff"
+        fill="none"
+        height="24"
+        width="24"
+        viewBox="0 0 24 24"
+      >
+        <circle r="10" cy="12" cx="12"></circle>
+        <path
+          d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+        ></path>
+        <path d="M2 12h20"></path>
+      </svg>
+    </div>
+    <div id="search-icon">
+      <svg
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        stroke-width="2"
+        stroke="url(#cosmic-search)"
+        fill="none"
+        height="24"
+        width="24"
+        viewBox="0 0 24 24"
+      >
+        <circle r="8" cy="11" cx="11"></circle>
+        <line y2="16.65" x2="16.65" y1="21" x1="21"></line>
+        <defs>
+          <linearGradient gradientTransform="rotate(45)" id="cosmic-search">
+            <stop stop-color="#a9c7ff" offset="0%"></stop>
+            <stop stop-color="#6e8cff" offset="100%"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+</div>
 <script>
 	var el = document.getElementsByName('v')[0];
 	el.addEventListener("keypress", goPlay, false);
