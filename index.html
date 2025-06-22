@@ -78,7 +78,7 @@
   filter: blur(3px);
 }
 
-.input {
+.search-input {
   background-color: #05071b;
   border: none;
   width: 980px;
@@ -95,11 +95,11 @@
   justify-content: center;
 }
 
-.input::placeholder {
+.search-input::placeholder {
   color: #6e8cff;
 }
 
-.input:focus {
+.search-input:focus {
   outline: none;
 }
 
@@ -107,7 +107,7 @@
   display: none;
 }
 
-#input-mask {
+#search-input-mask {
   pointer-events: none;
   width: 100px;
   height: 20px;
@@ -361,7 +361,7 @@
 </style> 
  
 	<style>
-		.search-input {
+		.search-inputxx {
   position: relative;
   width: 96%;
   height: 40px;
@@ -419,15 +419,15 @@
 
   <div id="main">
     
-	<input name="v" minlength="5" maxlength="2000" type="text" autofocus="" required="" class="search-input" placeholder="Examples https://streamtv.cdn.dvmr.fr/TVR/ngrp:tvr.stream_all/master.m3u8 or https://vimeo.com/284319264" value="">  
+	
 	  
      <input
-      required class="input search-input"
+      required class="search-input"
       name="text"
       minlength="5" 
       maxlength="2000"
       type="text"
-      autofocus
+      autofocus=""
       placeholder="Examples https://streamtv.cdn.dvmr.fr/TVR/ngrp:tvr.stream_all/master.m3u8 or https://vimeo.com/284319264"
      value=""/>
     <div id="input-mask"></div>
