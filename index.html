@@ -147,7 +147,23 @@
 
 	</style>	
 		
-		
+	<style>
+		.bg-dark-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(8 8 8 / var(--tw-bg-opacity, 1));
+}
+	body {
+ 
+  color: hsl(var(--foreground));
+}
+	margin: 0;
+  line-height: inherit;
+	overflow-x: hidden;
+	--regular: 400;
+  --semibold: 600;
+  --bold: 700;
+	
+	</style>	
 <style>
 .container {
   max-width: 1000px;
@@ -157,6 +173,14 @@
   border-radius: 5px;
   overflow: hidden;
 }
+{
+  border-color: hsl(var(--border));
+box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+	}
+
+
 </style>
 		
 <script src="https://vsalema.github.io/play3/js/open52.js"></script>
@@ -275,7 +299,7 @@ body[data-av="audio"] #video1 {padding-top:25%;}
 	</head>
 
 
-<body>
+<body class="bg-dark-900 dark">
 	
 	<div style="margin-top: 0px;">
   
