@@ -129,6 +129,17 @@ body[data-av="audio"] #video1 {padding-top:25%;}
 		body {padding-left:15px;}
 		a {text-decoration: none;margin:20px;}
 		input {color:green;margin-right:10px;margin-top:5px; height:1.8em;width:96%;}
+	
+	
+	url-input {
+  border: 2px solid rgb(225, 229, 235);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  width: 100%;
+  font-size: 16px;
+  transition: var(--transition);
+}
+	
 	</style>
 	
 	</head>
@@ -150,7 +161,7 @@ body[data-av="audio"] #video1 {padding-top:25%;}
 
 
 	Entrez simplement le lien audio/vidéo ci-dessous et appuyez sur la touche <span class="boutonlike" style="white-space:nowrap;"> Enter ⏎ </span>  ou cliquez sur <span class="bouton" style="white-space:nowrap;color:white;" onclick="play()">Play</span>.
-	<input name="v" minlength="5" maxlength="2000" type="text" autofocus required
+	<input name="v" class="url-input" minlength="5" maxlength="2000" type="text" autofocus required
 		placeholder="Examples https://streamtv.cdn.dvmr.fr/TVR/ngrp:tvr.stream_all/master.m3u8 or https://vimeo.com/284319264" 
 		value="" />
 
