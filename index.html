@@ -17,25 +17,6 @@
   border-radius: 5px;
   overflow: hidden;
 }
-.mb-3 {
-  margin-bottom: 1rem !important;
-}
-.url-input {
-  border: 2px solid rgb(225, 229, 235);
-  padding: 15px;
-  border-radius: var(--border-radius);
-  width: 100%;
-  font-size: 16px;
-  transition: var(--transition);
-}
-	.input-group {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
-  width: 100%;
-}
-
 </style>
 		
 <script src="https://vsalema.github.io/play3/js/open52.js"></script>
@@ -170,14 +151,12 @@ body[data-av="audio"] #video1 {padding-top:25%;}
 
 
 	Entrez simplement le lien audio/vidéo ci-dessous et appuyez sur la touche <span class="boutonlike" style="white-space:nowrap;"> Enter ⏎ </span>  ou cliquez sur <span class="bouton" style="white-space:nowrap;color:white;" onclick="play()">Play</span>.
-	<form id="mainForm" action="" method="GET" class="mb-3">
-		<div class="input-group">
-		<input name="v" class="url-input" minlength="5" maxlength="2000" type="text" autofocus required
+	
+		
+		<input name="v" minlength="5" maxlength="2000" type="text" autofocus required
 		placeholder="Examples https://streamtv.cdn.dvmr.fr/TVR/ngrp:tvr.stream_all/master.m3u8 or https://vimeo.com/284319264" 
 		value="" />
-<button type="submit" class="btn btn-primary custom-play-btn">
-                                    <i class="fas fa-play"></i> Play
-                                </button></div></form>
+
 	<span style="color:red"><?php echo $_GET['err'] ?></span>
 	</div>
 </body>
