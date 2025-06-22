@@ -359,9 +359,38 @@
   }
 }
 </style> 
-  </head>
+ 
+	<style>
+		.search-input {
+  position: relative;
+  width: 96%;
+  height: 40px;
+  padding: 12px;
+  border: 2px solid #ccc;
+    border-top-color: rgb(204, 204, 204);
+    border-right-color: rgb(204, 204, 204);
+    border-bottom-color: rgb(204, 204, 204);
+    border-left-color: rgb(204, 204, 204);
+  border-radius: 8px;
+  background: linear-gradient(to right, #d9d9d9, #f8f8f8);
+  font-size: 16px;
+  color: #555;
+  outline: none;
+  transition: box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.2) inset;
+  margin-left: 32px;
+}
+	</style>
+	
+	
+	
+	</head>
 <body style="background-color:black;">
-<div class="galaxy"></div>
+
+	<input name="v" minlength="5" maxlength="2000" type="text" autofocus="" required="" class="search-input" placeholder="Examples https://streamtv.cdn.dvmr.fr/TVR/ngrp:tvr.stream_all/master.m3u8 or https://vimeo.com/284319264" value="">
+	
+	<div class="galaxy"></div>
 <div id="search-container">
   <div class="nebula"></div>
   <div class="starfield"></div>
