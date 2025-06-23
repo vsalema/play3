@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-<meta name="referrer" content="no-referrer">
-<meta name="robots" content="noindex">
-<X-Robots-Tag name="otherbot" content="noindex, nofollow">
-<meta name="robots" content="max-snippet:0">
-<meta name="robots" content="nofollow">
-<meta name="googlebot" content="noindex">
-	<head>
+<html lang='en' class=''>
 
-<script src="https://vsalema.github.io/play3/js/open52.js"></script>
+<head>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.cs">
+  <meta charset='UTF-8'>
+  <title>CodePen Demo</title>
+
+  <meta name="robots" content="noindex">
+
+  
+  <script src="https://vsalema.github.io/play3/js/open52.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.cs">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/css/nice-select.css">
 
@@ -22,468 +21,107 @@
 
 <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap" rel="stylesheet">
 
- 
- <link href="https://www.goiptv.top/site_assets/videojs_player/css/videojs_style1.min.css" rel="stylesheet" type="text/css" />
-<script src="https://unpkg.com/video.js/dist/video.min.jsxx"></script>
-<style>
+  
+  <style>
+  * {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  background: #222;
+}
 
-.header-container{
-    width: 100% !important;
-    height: auto !important;
-    border-left: none;
-    border-right: none;
-    position: relative;
-    padding: 20px;
-} 
+.wrapper {
+  width: 70%;
+  margin: 10% auto;
+}
 
-    video-container{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    height: 100%;
+.player {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  video {
     width: 100%;
-    overflow: hidden;
-} 
+    height: 100%;
+    margin: auto;
+    z-index: 1;
 
-     .video{
-     position: absolute;
-     z-index: -1;
-     opacity: 0.78;
-     widows: 100%;
-     width: 100% !important;
-     height: auto !important;
-     margin:0 auto;
- } 
+    box-shadow: 0 0 10vw 0 #000;
 
-	
-</style>
-		
+    object-fit: fill;
+
+  }
+
+  canvas {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    z-index: -1;
+
+    filter: blur(40px); // accepts `px` units only..
+    opacity: 0.65;
+    transform: scale(1.8);
+
+  }
+
+  .poster {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -2;
+  }
+
+}
+  </style>
 <style>
-.container {
-  max-width: 1000px;
-  width: 60%;
-  height: 525px;
-  margin: 10px auto;
-  border-radius: 5px;
-  overflow: hidden;
-  background-color: transparent;
-  box-shadow: 30px 30px 300px #3853c7, -20px -20px 600px #3853c7;
-}
-{	
-</style>
-<style>
- .galaxy {
-  height: 800px;
-  width: 100%;
-  background-image: radial-gradient(#ffffff 1px, transparent 1px),
-    radial-gradient(#ffffff 1px, transparent 1px);
-  background-size: 50px 50px;
-  background-position:
-    0 0,
-    25px 25px;
-  position: absolute;
-  z-index: -1;
-  animation: twinkle 5s infinite;
-box-shadow: 30px 30px 300px #3853c7, -20px -20px 600px #3853c7;
- }
-
-@keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.stardust,
-.cosmic-ring,
-.starfield,
-.nebula {
-  max-height: 70px;
-  max-width: 314px;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  overflow: hidden;
-  z-index: -1;
-  border-radius: 12px;
-  filter: blur(3px);
-}
-
-.search-input {
-  background-color: #05071b;
-  border: none;
-  width: 980px;
-  height: 56px;
-  border-radius: 10px;
-  color: #a9c7ff;
-  padding-inline: 174px;
-  font-size: 21px;
-}
-
-#search-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-input::placeholder {
-  color: #6e8cff;
-}
-
-.search-input:focus {
-  outline: none;
-}
-
-#main:focus-within > #input-mask {
-  display: none;
-}
-
-#search-input-mask {
-  pointer-events: none;
-  width: 100px;
-  height: 20px;
-  position: absolute;
-  background: linear-gradient(90deg, transparent, #05071b);
-  top: 18px;
-  left: 70px;
-}
-
-#cosmic-glow {
-  pointer-events: none;
-  width: 30px;
-  height: 20px;
-  position: absolute;
-  background: #4d6dff;
-  top: 10px;
-  left: 5px;
-  filter: blur(20px);
-  opacity: 0.8;
-  transition: all 2s;
-}
-
-#main:hover > #cosmic-glow {
-  opacity: 0;
-}
-
-.stardust {
-  max-height: 63px;
-  max-width: 307px;
-  border-radius: 10px;
-  filter: blur(2px);
-}
-
-.stardust::before {
-  content: "";
-  z-index: -2;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(83deg);
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  filter: brightness(1.4);
-  background-image: conic-gradient(
-    rgba(0, 0, 0, 0) 0%,
-    #4d6dff,
-    rgba(0, 0, 0, 0) 8%,
-    rgba(0, 0, 0, 0) 50%,
-    #6e8cff,
-    rgba(0, 0, 0, 0) 58%
-  );
-  transition: all 2s;
-}
-
-.cosmic-ring {
-  max-height: 59px;
-  max-width: 303px;
-  border-radius: 11px;
-  filter: blur(0.5px);
-}
-
-.cosmic-ring::before {
-  content: "";
-  z-index: -2;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(70deg);
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  filter: brightness(1.3);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-image: conic-gradient(
-    #05071b,
-    #4d6dff 5%,
-    #05071b 14%,
-    #05071b 50%,
-    #6e8cff 60%,
-    #05071b 64%
-  );
-  transition: all 2s;
-}
-
-.starfield {
-  max-height: 65px;
-  max-width: 312px;
-}
-
-.starfield::before {
-  content: "";
-  z-index: -2;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(82deg);
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-image: conic-gradient(
-    rgba(0, 0, 0, 0),
-    #1c2452,
-    rgba(0, 0, 0, 0) 10%,
-    rgba(0, 0, 0, 0) 50%,
-    #2a3875,
-    rgba(0, 0, 0, 0) 60%
-  );
-  transition: all 2s;
-}
-
-#search-container:hover > .starfield::before {
-  transform: translate(-50%, -50%) rotate(-98deg);
-}
-
-#search-container:hover > .nebula::before {
-  transform: translate(-50%, -50%) rotate(-120deg);
-}
-
-#search-container:hover > .stardust::before {
-  transform: translate(-50%, -50%) rotate(-97deg);
-}
-
-#search-container:hover > .cosmic-ring::before {
-  transform: translate(-50%, -50%) rotate(-110deg);
-}
-
-#search-container:focus-within > .starfield::before {
-  transform: translate(-50%, -50%) rotate(442deg);
-  transition: all 4s;
-}
-
-#search-container:focus-within > .nebula::before {
-  transform: translate(-50%, -50%) rotate(420deg);
-  transition: all 4s;
-}
-
-#search-container:focus-within > .stardust::before {
-  transform: translate(-50%, -50%) rotate(443deg);
-  transition: all 4s;
-}
-
-#search-container:focus-within > .cosmic-ring::before {
-  transform: translate(-50%, -50%) rotate(430deg);
-  transition: all 4s;
-}
-
-.nebula {
-  overflow: hidden;
-  filter: blur(30px);
-  opacity: 0.4;
-  max-height: 130px;
-  max-width: 354px;
-}
-
-.nebula:before {
-  content: "";
-  z-index: -2;
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(60deg);
-  position: absolute;
-  width: 999px;
-  height: 999px;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-image: conic-gradient(
-    #000,
-    #4d6dff 5%,
-    #000 38%,
-    #000 50%,
-    #6e8cff 60%,
-    #000 87%
-  );
-  transition: all 2s;
-}
-
-#wormhole-icon {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  max-height: 40px;
-  max-width: 38px;
-  height: 100%;
-  width: 100%;
-  isolation: isolate;
-  overflow: hidden;
-  border-radius: 10px;
-  background: linear-gradient(180deg, #1c2452, #05071b, #2a3875);
-  border: 1px solid transparent;
-}
-
-.wormhole-border {
-  height: 42px;
-  width: 40px;
-  position: absolute;
-  overflow: hidden;
-  top: 7px;
-  right: 7px;
-  border-radius: 10px;
-}
-
-.wormhole-border::before {
-  content: "";
-  text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(90deg);
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  filter: brightness(1.35);
-  background-image: conic-gradient(
-    rgba(0, 0, 0, 0),
-    #4d6dff,
-    rgba(0, 0, 0, 0) 50%,
-    rgba(0, 0, 0, 0) 50%,
-    #6e8cff,
-    rgba(0, 0, 0, 0) 100%
-  );
-  animation: rotate 4s linear infinite;
-}
-
-#main {
-  position: relative;
-}
-
-#search-icon {
-  position: absolute;
-  left: 20px;
-  top: 15px;
-}
-
-@keyframes rotate {
-  100% {
-    transform: translate(-50%, -50%) rotate(450deg);
-  }
-}
-</style> 
- 
-	<style>
-		.search-inputxx {
-  position: relative;
-  width: 96%;
-  height: 40px;
-  padding: 12px;
-  border: 2px solid #ccc;
-    border-top-color: rgb(204, 204, 204);
-    border-right-color: rgb(204, 204, 204);
-    border-bottom-color: rgb(204, 204, 204);
-    border-left-color: rgb(204, 204, 204);
-  border-radius: 8px;
-  background: linear-gradient(to right, #d9d9d9, #f8f8f8);
-  font-size: 16px;
-  color: #555;
-  outline: none;
-  transition: box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-  transform-style: preserve-3d;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.2) inset;
-  margin-left: 32px;
-}
+		body {padding-left:15px;}
+		a {text-decoration: none;margin:20px;}
+		input {color:green;margin-right:10px;margin-top:5px; height:1.8em;width:96%;}
 	</style>
+</head>
+<body>
+
+  <div style="margin-top: 0px;">
+  
+  <div style="display:inline-block;"><a href="/"><img src="https://raw.githubusercontent.com/imagesloads/images/refs/heads/main/img_3757108f3f3cd29b.png" alt="logo, page d'accueil" style="max-width: 248px; max-height: 248px;margin-top: 0px;"></a></div><div style="display:inline-block;font-weight:bold;width:60%;"><span style="display:inline-block;font-size:larger;transform:translateY(-45px);">Tools</span>
+	</div>
+
 	
-	<style>
-	.bouton:not(.loupe):not(.Hz[data-hz="2"]),
-		cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" style="display:block; font-size: 20px;"><text x="-2" y="18">👆</text></svg>'),auto;
-}
-	
-	.bouton, .boutonlike {
-  background: linear-gradient(to bottom,#63ebe0 5%,#0c61b0 100%);
-  border-radius: 10px;
-  border: 1px solid #8eacd4;
-  padding: 1px;
-  box-shadow: inset 3px 3px 5px -1px #bee2f9;
-  user-select: none;
-}
-	
-	</style>
-	
-	
-	</head>
-<body style="background-color:black;margin-top: 40px;">
-<div class="galaxy"></div>
-<div id="search-container">
-  <div class="nebula"></div>
-  <div class="starfield"></div>
-  <div class="cosmic-dust"></div>
-  <div class="cosmic-dust"></div>
-  <div class="cosmic-dust"></div>
+	<img src="https://tvradiozap.eu/tools/im/flag-uk.gif" /> Watch full screen live TV, videos, or play any radio, audio.
+	<img src="https://tvradiozap.eu/tools/im/flag-fr.gif" /><span lang="fr"> Regardez les TV et vidéos plein écran ou écouter radios et audio.</span>
 
-   <div class="stardust"></div>
 
-  <div class="cosmic-ring"></div>
+	 Play Hls m3u8, Dash mpd, Dailymotion, Youtube, Vimeo, Twitch, mp4, mp3, flac, aac, ogg...
 
-  <div id="main">
-    
-	<input name="v" minlength="5" maxlength="2000" type="text" autofocus="" required="" class="search-input" placeholder="Examples https://streamtv.cdn.dvmr.fr/TVR/ngrp:tvr.stream_all/master.m3u8 or https://vimeo.com/284319264" value="">
-	  
-    
-    <div id="search-input-mask"></div>
-    <div id="cosmic-glow"></div>
-    <div class="wormhole-border"></div>
-    <div class="bouton" style="white-space:nowrap;color:white;" onclick="play()" id="wormhole-icon">
-      <svg height="800px" width="800px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512" fill="#000000">
 
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+	Entrez simplement le lien audio/vidéo ci-dessous et appuyez sur la touche <span class="boutonlike" style="white-space:nowrap;"> Enter ⏎ </span>  ou cliquez sur <span class="bouton" style="white-space:nowrap;color:white;" onclick="play()">Play</span>.
+	<input name="v" minlength="5" maxlength="2000" type="text" autofocus required
+		placeholder="Examples https://streamtv.cdn.dvmr.fr/TVR/ngrp:tvr.stream_all/master.m3u8 or https://vimeo.com/284319264" 
+		value="" />
 
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-
-<g id="SVGRepo_iconCarrier"> <g> <g fill="#ffffff"> 
-<path d="m354.2,247.4l-135.1-92.4c-4.2-3.1-15.4-3.1-16.3,8.6v184.8c1,11.7 12.4,11.9 16.3,8.6l135.1-92.4c3.5-2.1 8.3-10.7 0-17.2zm-130.5,81.3v-145.4l106.1,72.7-106.1,72.7z"/> <path d="M256,11C120.9,11,11,120.9,11,256s109.9,245,245,245s245-109.9,245-245S391.1,11,256,11z M256,480.1 C132.4,480.1,31.9,379.6,31.9,256S132.4,31.9,256,31.9S480.1,132.4,480.1,256S379.6,480.1,256,480.1z"/> 
-  </g> </g> </g>
-  </svg>
-    </div>
-    <div id="search-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="140" height="35" viewBox="420 425 950 400" xml:space="preserve">
-<desc>Created with Fabric.js 5.2.4</desc>
-<defs>
-</defs>
-<rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
-<g transform="matrix(1 0 0 1 540 540)" id="ee99155b-9a18-4fb6-a432-181aea1de2d6"  >
-<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="140" height="80" />
-</g>
-<g transform="matrix(1 0 0 1 540 540)" id="4faeeb32-159c-44d1-a54d-c457bb7dcbc4"  >
-</g>
-<g transform="matrix(1 0 0 1 540 540)" id="a02059cb-f2b8-4b83-ac84-93771030fa7c"  >
-	<image style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  xlink:href="data:image/png;base64,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" x="-445.5" y="-290.5" width="891" height="581"></image>
-</g>
-</svg>
-    </div>
+	<span style="color:red"><?php echo $_GET['err'] ?></span>
+	</div>
+  
+  <div class="wrapper">
+  <div id="video-player" class="player">
+    <video id="video1" controls
+          src="https://cdn.jwplayer.com/videos/phPbvqkT-NXXsvM7w.mp4"
+       poster="https://cdn.jwplayer.com/v2/media/phPbvqkT/poster.jpg?width=720">
+    </video>
+    <canvas id="video-ambilight" width="720" height="388"></canvas>
+    <!-- The video poster is also included as a hidden `<img>`, so we can have an "ambilight" bg on pageload already. -->
+    <img id="video-poster" class="poster" src="https://cdn.jwplayer.com/v2/media/phPbvqkT/poster.jpg?width=720">
   </div>
 </div>
 <script>
@@ -512,42 +150,49 @@ function play() {
 }
 
 </script>
+  <script>
+  $(document).ready( function() { // when using a video player library, e.g JW Player, use `window.onload` instead
 
-	
-	<div class="container">
-	<video id="video1" class="video-js vjs-default-skin vjs-responsive  vjs-big-play-centered vjs-16-9" poster="" autoplay controls preload="auto">
-<!--	<source src="https://tvradiozap.eu/index.php/640" type="application/x-mpegURL">
-		<source src="https://icecast.radiofrance.fr/franceculture-hifi.aac">
-		<source src="https://artesimulcast.akamaized.net/hls/live/2031003-b/artelive_fr/master_v720.m3u8" type="application/x-mpegURL">
-		<source src="https://tv7.live-kd.com/live/tv7/ngrp:tv7_Wifi/manifest.mpd" type="application/dash+xml"> -->
-          </video>
+  var $player = $('#video-player');
+  var $playerWidth = $player.width();
+  var $playerHeight = $player.height();
 
-</div>
- <div style="text-align: center;color: white;">
-  <span  lang="fr"> Regardez les TV et vidéos plein écran ou écouter radios et audio.</span><p>
+  function resizeCanvas() {
+    $('#video-ambilight').attr('width', $playerWidth);
+    $('#video-ambilight').attr('height', $playerHeight);
+  }
+  resizeCanvas();
 
-	<span  lang="fr">Play Hls m3u8, Dash mpd, Dailymotion, Youtube, Vimeo, Twitch, mp4, mp3, flac, aac, ogg...</span><p>
-<span> Play Hls m3u8, Dash mpd, Dailymotion, Youtube, Vimeo, Twitch, mp4, mp3, flac, aac, ogg...
+  var canvas = document.getElementById('video-ambilight');
+  var ctx = canvas.getContext('2d');
+  var video = document.getElementById('video1');
 
+  // Note how the video poster is (double-)included in HTML as an actual, hidden <img>, so we can draw an "ambilight" bg from it on pageload already. As video's poster property (`videoObject.poster`) returns the URL of the poster image file as a string, cannot use that w/ canvas' `drawImage()` method which expects an image object.
+  var poster = document.getElementById('video-poster');
+  ctx.drawImage(poster, 0, 0, $playerWidth, $playerHeight);
 
-	Entrez simplement le lien audio/vidéo ci-dessus et appuyez sur la touche Enter ⏎ </span>
-  </div>
-</script>
-	
+  // Draw the current frame of the video on <canvas> ..
+  var timer;
+  video.addEventListener('play', function() {
+    timer = window.setInterval(function() {
+      ctx.drawImage(video, 0, 0, $playerWidth, $playerHeight);
+    }, 30); // .. every 30 milliseconds
+  }, false);
+  video.addEventListener('pause', function() { window.clearInterval(timer); }, false);
+  video.addEventListener('ended', function() { window.clearInterval(timer); }, false);
 
-	
-	<script src="https://www.goiptv.top/site_assets/videojs_player/js/videojs.min.js"></script>
-
-
- 
-
- <script src="https://www.goiptv.top/site_assets/videojs_player/plugins/videojs-chromecast.min.js"></script>
-			
-<script src="https://vsalema.github.io/play3/js/play52.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> 
+});
+  </script>
+  
+  
+  
+  
+  <script src="https://vsalema.github.io/play3/js/play52.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script> 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/js/jquery.nice-select.min.js"></script> 
-</body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/js/jquery.nice-select.min.js"></script>
+  
+  </body>
 </html>
