@@ -115,9 +115,8 @@ body {
   
   <div class="wrapper">
   <div id="video-player" class="player">
-    <video id="video1" autoplay controls
-          
-       poster="https://cdn.jwplayer.com/v2/media/phPbvqkT/poster.jpg?width=720">
+    <video id="video1" class="video-js vjs-default-skin vjs-responsive  vjs-big-play-centered vjs-16-9" autoplay controls preload="auto"
+        poster="">
     </video>
     <canvas id="video-ambilight" width="720" height="388"></canvas>
     <!-- The video poster is also included as a hidden `<img>`, so we can have an "ambilight" bg on pageload already. -->
