@@ -25,7 +25,38 @@
  
  <link href="https://www.goiptv.top/site_assets/videojs_player/css/videojs_style1.min.css" rel="stylesheet" type="text/css" />
 <script src="https://unpkg.com/video.js/dist/video.min.jsxx"></script>
+<style>
 
+.header-container{
+    width: 100% !important;
+    height: auto !important;
+    border-left: none;
+    border-right: none;
+    position: relative;
+    padding: 20px;
+} 
+
+    video-container{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+} 
+
+     .video{
+     position: absolute;
+     z-index: -1;
+     opacity: 0.78;
+     widows: 100%;
+     width: 100% !important;
+     height: auto !important;
+     margin:0 auto;
+ } 
+
+	
+</style>
 		
 <style>
 .container {
@@ -482,7 +513,7 @@ function play() {
 </script>
 
 	
-	<div class="container">
+	<div class="header-container">
 	<video id="video1" class="video-js vjs-default-skin vjs-responsive  vjs-big-play-centered vjs-16-9" poster="" autoplay controls preload="auto">
 <!--	<source src="https://tvradiozap.eu/index.php/640" type="application/x-mpegURL">
 		<source src="https://icecast.radiofrance.fr/franceculture-hifi.aac">
