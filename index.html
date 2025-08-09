@@ -1,29 +1,87 @@
 <!DOCTYPE html>
-<html lang='en' class=''>
+<html>
+<meta charset="UTF-8">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<X-Robots-Tag name="otherbot" content="noindex, nofollow">
+<meta name="robots" content="max-snippet:0">
+<meta name="robots" content="nofollow">
+<meta name="googlebot" content="noindex">
+	<head>
 
-<head>
+		<link href="https://unpkg.com/videojs-max-quality-selector@0.9.1/dist/videojs-max-quality-selector.css" rel="stylesheet">
+		<script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.20.1/video.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap" rel="stylesheet">
 
-  <meta charset='UTF-8'>
-  <title>CodePen Demo</title>
+ 
+ <link rel="stylesheet" href="https://vsalema.github.io/tvpt4/css/tresmin.css" rel="stylesheet" type="text/css">
+<script src="https://unpkg.com/video.js/dist/video.min.jsxx"></script>
+		<style>
+html {overflow: hidden;}
+body {background:black;padding:0;margin:0;}
 
-  <meta name="robots" content="noindex">
+#tvrzInfos {font-size:1.7em;padding-bottom:2px;}	/*bouton d'ouverture de l'info tech */
+#tvrzInfos > * {z-index:999999;font-size:smaller;display:none; position:absolute; margin-top:-12em;margin-left:-20em; right:10px;
+				text-align:left; padding:10px;color:black; background:lightgrey;	border-radius: 10px; outline:1px solid black;}
+#tvrzInfos:hover > * {
+	display:block;
+    animation: 1s menuOn;
+	opacity:0;
+	animation-fill-mode: forwards;
+	visibility: visible;
+  }
+		</style>
+<script src="https://vsalema.github.io/play3/js/open52.js"></script>
 
-  
-  <script src="https://vsalema.github.io/play3/js/open52.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.cs">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.cs">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/css/nice-select.css">
 
 <link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://tvradiozap.eu/css/tvrz52.css">
+
    
 <link rel="stylesheet" href="https://www.goiptv.top/site_assets/css/splide.min.css">
 
-<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap" rel="stylesheet">
-<link href="https://www.goiptv.top/site_assets/videojs_player/css/videojs_style1.min.css" rel="stylesheet" type="text/css" />
+
+
+<style>
+a {
+  cursor: pointer;
+  width: 25px;
+  padding: 7px 7px;
+  border-radius: 4px;
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "courier new";
+  margin-top: 7%;
+  z-index: 3;
+ position: absolute;
+}
+
+.ff-sc {
+  margin: 0px;
+  display: none;
+  position: absolute;
+  left: 25%;
+top: 0px;
+
+  }
+  .fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  z-index: 3;
+  position: absolute;
+  margin-top: -114px;
+  margin-left: -3px;
+  color: #6360c5;
+}
   
-	<style>
-.container {
+  .container {
   max-width: 1000px;
   width: 60%;
   height: 525px;
@@ -48,9 +106,9 @@
     0 0,
     25px 25px;
   position: absolute;
-  z-index: -1;
+  z-index: 3;
   animation: twinkle 5s infinite;
-
+  visibility: hidden;
  }
 
 @keyframes twinkle {
@@ -345,7 +403,8 @@
 
 #main {
   position: relative;
-}
+  z-index: 3;
+  }
 
 #search-icon {
   position: absolute;
@@ -465,15 +524,13 @@ body {
 
 }
   </style>
-<style>
-		body {padding-left:15px;}
-		a {text-decoration: none;margin:20px;}
-		input {color:green;margin-right:10px;margin-top:5px; height:1.8em;width:96%;}
-	</style>
-</head>
-<body>
 
- <body style="background-color:black;margin-top: 0px;">
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css'>
+
+<a class="ex1-btn ff-btn" title="toggle shortcode"><div class="menu fa" style="z-index: 3;position: absolute;margin-top: -114px;margin-left: -3px;color: #6360c5;">url</div></a>
+<div class="ff-sc ex1">
+
 <div class="galaxy"></div>
 <div id="search-container">
   <div class="nebula"></div>
@@ -481,8 +538,8 @@ body {
   <div class="cosmic-dust"></div>
   <div class="cosmic-dust"></div>
   <div class="cosmic-dust"></div>
-
-   <div class="stardust"></div>
+<div class="stardust"></div>
+   
 
   <div class="cosmic-ring"></div>
 
@@ -524,21 +581,10 @@ body {
     </div>
   </div>
 </div>
-  
-  <div class="wrapper">
-  <div id="video-player" class="player container">
-    <video id="video1" class="video-js vjs-default-skin vjs-responsive  vjs-big-play-centered vjs-16-9"  poster="" autoplay controls preload="auto">
-<!--	<source src="https://tvradiozap.eu/index.php/640" type="application/x-mpegURL">
-		<source src="https://icecast.radiofrance.fr/franceculture-hifi.aac">
-		<source src="https://artesimulcast.akamaized.net/hls/live/2031003-b/artelive_fr/master_v720.m3u8" type="application/x-mpegURL">
-		<source src="https://tv7.live-kd.com/live/tv7/ngrp:tv7_Wifi/manifest.mpd" type="application/dash+xml"> -->
-          </video>
-    <canvas id="video-ambilight" width="720" height="388"></canvas>
-    <!-- The video poster is also included as a hidden `<img>`, so we can have an "ambilight" bg on pageload already. -->
-    <img id="video-poster" class="poster" src="">
-  </div>
+
+
 </div>
-<script>
+ <script>
 	var el = document.getElementsByName('v')[0];
 	el.addEventListener("keypress", goPlay, false);
 	function goPlay(e){
@@ -557,61 +603,111 @@ function play() {
 	history.pushState( {}, null, '/tools/joue.html?'+(url = decodeURIComponent(el.value)) );
 	
 	if (url.substring(0,5)==='https')
-		window.open(decodeURIComponent('https://vsalema.github.io/play3/?'+url),'_self');	//même nom de target que depuis index.php mais pas même browser context => pas le même TAB
+		window.open(decodeURIComponent('https://vsalema.github.io/play3/?'+url),'ecoute');	//même nom de target que depuis index.php mais pas même browser context => pas le même TAB
 	else
-		window.open(decodeURIComponent('https://vsalema.github.io/play3/?'+url),'_self');	//même nom de target que depuis index.php mais pas même browser context => pas le même TAB
+		window.open(decodeURIComponent('https://vsalema.github.io/play3/?'+url),'ecoute');	//même nom de target que depuis index.php mais pas même browser context => pas le même TAB
 	return false;
 }
 
 </script>
-  <script>
-  $(document).ready( function() { // when using a video player library, e.g JW Player, use `window.onload` instead
 
-  var $player = $('#video-player');
-  var $playerWidth = $player.width();
-  var $playerHeight = $player.height();
+	
+	<div class="player-wrapper">
+	<video data-dashjs-player id="video1" class="js-video video-js vjs-responsive vjs-big-play-centered vjs-16-9" width='920'  height='520' poster=""  controls preload="auto">
+<!--	<source src="https://tvradiozap.eu/index.php/640" type="application/x-mpegURL">
+		<source src="https://icecast.radiofrance.fr/franceculture-hifi.aac">
+		<source src="https://artesimulcast.akamaized.net/hls/live/2031003-b/artelive_fr/master_v720.m3u8" type="application/x-mpegURL">
+		<source src="https://tv7.live-kd.com/live/tv7/ngrp:tv7_Wifi/manifest.mpd" type="application/dash+xml"> -->
+          </video>
 
-  function resizeCanvas() {
-    $('#video-ambilight').attr('width', $playerWidth);
-    $('#video-ambilight').attr('height', $playerHeight);
-  }
-  resizeCanvas();
+</div>
 
-  var canvas = document.getElementById('video-ambilight');
-  var ctx = canvas.getContext('2d');
-  var video = document.getElementById('video1');
+	<script src="https://play.shidur.net/node_modules/video.js/dist/video.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.6.0/Youtube.min.js'></script>
 
-  // Note how the video poster is (double-)included in HTML as an actual, hidden <img>, so we can draw an "ambilight" bg from it on pageload already. As video's poster property (`videoObject.poster`) returns the URL of the poster image file as a string, cannot use that w/ canvas' `drawImage()` method which expects an image object.
-  var poster = document.getElementById('video-poster');
-  ctx.drawImage(poster, 0, 0, $playerWidth, $playerHeight);
-
-  // Draw the current frame of the video on <canvas> ..
-  var timer;
-  video.addEventListener('play', function() {
-    timer = window.setInterval(function() {
-      ctx.drawImage(video, 0, 0, $playerWidth, $playerHeight);
-    }, 30); // .. every 30 milliseconds
-  }, false);
-  video.addEventListener('pause', function() { window.clearInterval(timer); }, false);
-  video.addEventListener('ended', function() { window.clearInterval(timer); }, false);
-
+	
+	<script src="https://players.brightcove.net/videojs-quality-menu/1/videojs-quality-menu.min.js"></script>
+<script src="https://unpkg.com/videojs-max-quality-selector@0.9.1/dist/videojs-max-quality-selector.min.js"></script>
+	
+	<script>
+var player = videojs('video1');
+player.maxQualitySelector({
+  'defaultQuality': 2 // Make the video start playing at the highest quality possible
 });
+var myPlayer = videojs('video1');
+myPlayer.ready(function () {
+  console.log("downloadvideo");
+  });
+</script>
+	
+<script>
+  
+  (function(window, videojs) {
+     var player = window.player = videojs('video1');
+	  player.ready(function() {
+	  const muteButton = document.querySelector("");
+		  muteButton.click();
+			
+		  var promise = player.play();
+		  if (promise !== undefined) {
+			  promise.then(function() {
+				  const muteButton = document.querySelector("");
+				}).catch(function(error) {
+				});
+			} else {
+			}
+		  });
+player.maxQualitySelector({
+		  displayCurrentQuality: false,
+	  });
+	}(window, window.videojs));
+  
   </script>
-  
-  
-  <script src="https://www.goiptv.top/site_assets/videojs_player/js/videojs.min.js"></script>
-
+    
+	
 
  
 
  <script src="https://www.goiptv.top/site_assets/videojs_player/plugins/videojs-chromecast.min.js"></script>
-  
-  <script src="https://vsalema.github.io/play3/js/play52.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> 
+			
+<script src="https://vsalema.github.io/play3/js/play52.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script> 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/js/jquery.nice-select.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.0/js/jquery.nice-select.min.js"></script> 
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    
+    <script>
+    
+    $(document).ready(function(){
   
-  </body>
+    var speed = 150;
+  
+    $(".ff-btn").click(function(){
+          $(this).next().slideToggle(speed);
+    });
+});
+var m = $(".menu");
+
+m.addClass('fa-bars');
+
+m.on('click', function () {
+  if (m.hasClass('fa-bars')) {
+    m.
+    removeClass('fa-bars').
+    addClass('fa-times');
+  } else {
+    m.
+    removeClass('fa-times').
+    addClass('fa-bars');
+  }
+});
+    </script>
+    
+    </body>
 </html>
+
+
+
+
