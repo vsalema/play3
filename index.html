@@ -540,7 +540,46 @@ body {
 }
   </style>
 
-
+<style>
+	#video-fond {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  #video-fond > video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  /* 1. Pas de support d'object-fit */
+  @media (min-aspect-ratio: 16/9) {
+    #video-fond > video {
+      height: 300%;
+      top: -100%;
+    }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    #video-fond > video {
+      width: 300%;
+      left: -100%;
+    }
+  }
+  /* 2. En cas de support d'object-fit, écrase les règles en (1) */
+  @supports (object-fit: cover) {
+    #video-fond > video {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+</style>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css'>
 
 <a class="ex1-btn ff-btn" title="toggle shortcode"><div class="menu fa" style="z-index: 3;position: absolute;margin-top: -114px;margin-left: -3px;color: #6360c5;">url</div></a>
@@ -627,7 +666,7 @@ function play() {
 </script>
 
 	
-	<div class="player-wrapper">
+	<div id="video-fond" class="player-wrapper">
 	<video data-dashjs-player id="video1" class="js-video video-js vjs-responsive vjs-big-play-centered vjs-fluid" autoplay poster=""  controls preload="auto">
 <!--	<source src="https://tvradiozap.eu/index.php/640" type="application/x-mpegURL">
 		<source src="https://icecast.radiofrance.fr/franceculture-hifi.aac">
