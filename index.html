@@ -640,14 +640,15 @@ function play() {
 	
 	<div class="player-wrapper">
 	<video data-dashjs-player id="video1" class="js-video video-js  vjs-big-play-centered vjs-fluid" autoplay poster=""  controls preload="auto" data-setup="{}">
-<!--	<source src="https://tvradiozap.eu/index.php/640" type="application/x-mpegURL">
-		<source src="https://icecast.radiofrance.fr/franceculture-hifi.aac">
-		<source src="https://artesimulcast.akamaized.net/hls/live/2031003-b/artelive_fr/master_v720.m3u8" type="application/x-mpegURL">
-		<source src="https://tv7.live-kd.com/live/tv7/ngrp:tv7_Wifi/manifest.mpd" type="application/dash+xml"> -->
+        <source src="" type="application/x-mpegURL">
+		<source src="">
+		<source src="" type="application/x-mpegURL">
+		<source src="" type="application/dash+xml">
           </video>
 
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="http://cdn.dashjs.org/latest/dash.mediaplayer.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 	<script src="https://play.shidur.net/node_modules/video.js/dist/video.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.6.0/Youtube.min.js'></script>
 
@@ -732,7 +733,13 @@ m.on('click', function () {
     var player = videojs('video1', {
   fluid: true
 });
-	
+	const source = "";
+const player = dashjs.MediaPlayer().create();
+player.initialize(
+  document.querySelector("#video1"),
+  source,
+  false
+);
 	</script>
     
     </body>
